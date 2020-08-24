@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CAR GAME</title>
+    </head>
+    <meta name="viewport" content="width=device-width ,user-scalable=no, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .hide{
+            display: none;
+        }
+        .carGame{
+            width: 100%;
+            height: 100vh;
+            background-image: url('cover3.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+
+        }
+        .car{
+            width: 50px;
+            height: 108px;
+            background-image: url(car2.png);
+            background-size: cover;
+            position: absolute;
+            bottom: 20%;
+        }
+        .lines{
+            width: 10px;
+            height: 100px;
+            background-color: white;
+            position: absolute;
+            margin-left: 49%;
+        }
+        .gameArea{
+            width:400px;
+            height: 100vh;
+            background-color: #2d3436;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            border-right: 7px dashed #c8d6e5;
+            border-left: 7px dashed #c8d6e5;
+        }
+        .enemy{
+            width: 50px;
+            height:108px;                                   
+            position: absolute;
+            bottom: 20%;
+        }
+        .score{
+            position: absolute;
+            top: 15px;
+            left: 40px;
+            background: greenyellow;
+            width: 300px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            color: black;
+            font-size: 1.5em;
+            font-family: fantasy;
+            box-shadow: 0 5px 5px #777;
+        }
+        .startScreen{
+            position: absolute;
+            background-color: #ee5253;
+            left:50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            color: white;
+            z-index:1;
+            text-align: center;
+            border: 1px solid #ff6b6b;
+            padding: 15px;
+            margin: auto;
+            width: 50%;
+            cursor: pointer;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            letter-spacing: 5;
+            font-size: 20px;
+            word-spacing: 3;
+            line-height: 30px;
+            text-transform: uppercase;
+            box-shadow: 0 5px 5px #777;
+        }
+        @media all and (max-width: 400px){
+            .gameArea{
+                width: 75%;
+                height: 92vh;
+            }
+            .carGame{
+                height: 92vh;
+            }
+            .score{
+                top: 0;
+                left: 0;
+                z-index: 3;
+                width: 120px;
+                height: 50px;
+                line-height: 50px;
+                color: white;
+                background-color: black;
+                font-size: 16px;
+            }
+        }
+    </style>
+    <body >
+        
+        <div class="carGame">
+            <div class="score"></div>
+            <div class="startScreen">
+                <p>Press Here to Start<br>
+                   Arrow keys to Move<br>
+                   If you hit another car you will lose!
+                </p>
+            </div>
+            <div class="gameArea">
+                
+            </div>
+        </div>
+
+        <script src="script2.js"></script>
+    </body>
+</html>

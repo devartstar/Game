@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <title>PING PONG</title>
+        <meta name="viewport" content="width=device-width ,user-scalable=no, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Monoton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Rock+Salt&display=swap" rel="stylesheet">
+        <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+        <style>
+            body{
+                background-image:linear-gradient(to bottom right, rgba(0,0,0,1), rgba(0,0,0,.1)),url('background3.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-attachment: fixed;
+                height:80vh;
+            }
+            .pingPong{
+                font-family: 'Monoton', cursive;
+                color: white;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: black;
+                font-size: 110px;
+                text-align: center;
+                padding-top: 50px;
+                word-spacing: 30px;
+                letter-spacing: 10px;
+                text-shadow: -25px 40px 20px #f3f315;
+            }
+            .start{
+                padding: 20px 50px;
+                background-color: 	rgba(99, 248, 246,.4)  ;
+                color: white;
+                font-size: 30px;
+                font-weight: 100;
+                font-family: 'Paytone One', sans-serif;
+                text-decoration: none;
+                position: absolute;
+                left: 65%;
+                top:55%;
+                border-radius: 30%;
+                transition: all 0.5s;
+            }
+            .start:hover{
+                font-size: 40px;
+                background-color: rgba(99, 248, 246,1);
+                transform: translate(-10%,-10%);
+                border: 2px solid black;
+                color: black;
+                box-shadow: 6px 6px 10px white;
+            }
+            .back{
+                padding: 20px 50px;
+                background-color: 	rgba(99, 248, 246,.4)  ;
+                color: white;
+                font-size: 30px;
+                font-weight: 100;
+                font-family: 'Paytone One', sans-serif;
+                text-decoration: none;
+                position: absolute;
+                left:65%;
+                top:73%;
+                border-radius: 30%;
+                transition: all 0.5s;
+            }
+            .back:hover{
+                font-size: 40px;
+                background-color: rgba(99, 248, 246,1);
+                transform: translate(-10%,-10%);
+                color: black;
+                box-shadow: 3px 3px 5px white;
+                border: 2px solid black;
+            }
+            @media all and (max-width: 850px){
+                .pingPong{
+                    font-size: 80px;
+                }
+                .start{
+                    padding: 15px 30px;
+                    font-size: 20px;
+                }
+                .start:hover{
+                    font-size: 30px;
+                }
+                .back{
+                    padding: 15px 30px;
+                    font-size: 20px;
+                }
+                .back:hover{
+                    padding: 15px 30px;
+                    font-size: 20px;
+                }
+            }
+            @media all and (max-width: 500px){
+                .pingPong{
+                    padding-top: 20px;
+                    font-size: 70px;
+                    word-spacing: 5px;
+                    letter-spacing: 2px;
+                    text-shadow: -10px 20px 20px #f3f315;
+                }
+                .start{
+                    left: 45%;
+                    transform: translateX(-50%);
+                }
+                .start:hover{
+                    font-size: 20px;
+                    background-color: rgba(99, 248, 246,1);
+                    transform: translate(0,0);
+                    border: 2px solid black;
+                    color: black;
+                    box-shadow: 6px 6px 10px white;
+                }
+                .back{
+                    left: 45%;
+                    transform: translateX(-50%);
+                    top: 68%;
+                }
+                .back:hover{
+                    font-size: 20px;
+                    background-color: rgba(99, 248, 246,1);
+                    transform: translate(0,0);
+                    color: black;
+                    box-shadow: 3px 3px 5px white;
+                    border: 2px solid black;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 class="pingPong">KING PONG</h1>
+        <a href="index3.html" class="start">START GAME</a>
+        <a href="../index.html" class="back">MAIN MENU</a>
+        
+    </body>
+</html>

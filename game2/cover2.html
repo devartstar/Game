@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <title>GAME 2</title>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Piedra&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width ,user-scalable=no, initial-scale=1.0">
+    </head>
+    <style>
+        .section{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            overflow-y: hidden;
+        }
+        .header{
+            position: absolute;
+            top: 25vh;
+            left:4vw;
+            background:transparent;
+            padding: 20px;
+            margin: 15px;
+            z-index: 1;
+            text-transform: uppercase;
+            font-family: 'Piedra', cursive;
+            font-size: 105px;
+            letter-spacing: 5px;
+            text-shadow: 5px 5px 2px black;
+            color: red;
+        }
+        .video-container{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .btn{
+            position: absolute;
+            top:55%;
+            text-decoration: none;
+            z-index: 1;
+            font-size: 30px;
+            padding: 30px 50px;
+            display: block;
+            border-radius: 20%;
+            border: 2px solid black;
+            background-color: #5DFF00;
+            color: #152E06;
+            font-family: 'Piedra', cursive;
+            box-shadow:10px 10px 20px black;
+            transition: all 0.7s;
+        }
+        .btn:hover{
+            background-color: black;
+            color: #CAFF25;
+            box-shadow: 5px 5px 10px #CAFF25 ;
+            transform: scale(1.2);
+        }
+        .btn1{
+            left:10%;
+        }
+        .btn2{
+            left: 35%;
+        }
+
+        @media all and (max-width: 400px){
+            body{
+                background-image: url('carGame.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+                height:100vh;
+                z-index: 10;
+                overflow-y: hidden;
+            }
+            .video-container{
+                visibility: hidden;
+            }
+            .header{
+                top: 15vh;
+                font-size: 70px;
+            }
+            .btn{
+                font-size: 30px;
+                padding: 15px 20px;
+                left: 20%;
+            }
+            .btn1{
+                top: 50%;
+            }
+            .btn2{
+                top: 63%;
+                padding: 15px 22px;
+            }
+        }
+ 
+
+
+
+    </style>
+    <body>
+        <div class="section">
+            <h1 class="header">CRAZY DRIVING</h1>
+            <a class="btn btn1" href="index2.html">START GAME</a>
+            <a class="btn btn2" href="../index.html">MAIN MENU</a>
+            <div class="video-container">
+                <video autoplay loop muted >
+                    <source src="video1.mp4" type="video/mp4">
+                </video>
+            </div>
+
+        </div>
+
+    </body>
+</html>

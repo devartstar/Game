@@ -1,0 +1,355 @@
+<html>
+    <head>
+        <title>Tetris Game</title>
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bree+Serif&family=Piedra&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Russo+One&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width ,user-scalable=no, initial-scale=1.0">
+    <style>
+        body{
+            background-color: black;
+            overflow: hidden;
+        }
+        #board{
+            margin:5vh auto;
+            height: 92vh;
+            width: 70vw;
+            border-radius: 10% ;
+            background-image: linear-gradient(to right,rgba(121,159,12,1),rgba(255,224,0,1));
+        }
+        #score{
+            display: inline-block;
+            font-size: 80px;
+        }
+        #scoreBoard{
+            background-color: rgba(5, 67, 4 );
+            border-radius: 15%;
+            font-family: 'Shadows Into Light', cursive;
+            font-weight: 200;
+            color: rgba(22, 244, 19) ;
+            font-size: 50px;
+            padding: 0px 10px;
+            text-align: center;
+            display: inline-block;
+            position: absolute;
+            top: 10%;
+            right: 27%;
+        }
+        #tetris{
+            margin:10vh 10vw;
+            transform:scale(1.2,1.2);
+            border: 10px solid #419808;
+            box-shadow: 10px 10px 15px black ;
+        }
+        div{
+            font-size: 25px;
+            font-weight: bold;
+            font-family: monospace;
+        }
+        .difficultyLevel{
+            font-size: 50px;
+            font-family: 'Piedra', cursive;
+            position: fixed;
+            color: red;
+            text-shadow: 5px 5px 2px black;
+            top: 22%;
+            right: 20%;
+        }
+        .type{
+            color: black;
+            text-shadow: 5px 5px 10px red;
+        }
+        .instructions{
+            position: fixed;
+            font-family: 'Shadows Into Light', cursive;
+            top: 40%;
+            right: 20%;
+            font-size: 30px;
+        }
+        .btn{
+            position: absolute;
+            padding: 5px 10px;
+            text-decoration: none;
+            background-color: #E7300B ;
+            color: white;
+            
+            font-family: 'Shadows Into Light', cursive;
+            border-radius: 20%;
+            box-shadow: 10px 10px 5px black;
+        }
+        .btn:hover{
+            background-color: black;
+            color: #98FF0C;
+            transform: translateY(-3px);
+            box-shadow: 5px 5px 5px red;
+        }
+        .btn1{
+            top: 100%;
+            right: 60%;
+        }
+        .btn2{
+            top: 100%;
+            right: 10%;
+        }
+        #game{
+            position: absolute;
+            visibility: hidden;
+            background-image: linear-gradient( 154.4deg,  rgba(0,0,0,1) 30.5%, rgba(190,141,12,1) 130% );
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            height:100vh;
+            color: white;
+            height: 85vh;
+            width: 64vw;
+            top: 8%;
+            left: 18%;
+            border-radius: 8%;
+        }
+        .title{
+            font-family: 'Press Start 2P', cursive;
+            margin: 80px 280px;
+            font-size: 80px;
+        }
+
+        #restartButton{
+            text-decoration: none;
+            font-family: 'Russo One', sans-serif;
+            font-size: 30px;
+            display: inline-block;
+            margin:20px 50px 0 200px;
+            padding: 7px 7px;
+            border-radius: 10px;
+            color: white;
+            background-color: black;
+            box-shadow: 2px  2px 10px white;
+        }
+        #restartButton:hover{
+            color: black;
+            background-color: red;
+            transform: scale(1.5);
+            border: 2px solid black;
+        }
+
+        #mainMenu{
+            text-decoration: none;
+            font-family: 'Russo One', sans-serif;
+            font-size: 30px;
+            display: inline-block;
+            margin:20px 50px;
+            padding: 7px 7px;
+            border-radius: 10px;
+            color: white;
+            background-color: black;
+            box-shadow: 2px  2px 10px white;
+        }
+        #mainMenu:hover{
+            color: black;
+            background-color: red;
+            transform: scale(1.5);
+            border: 2px solid black;
+        }
+        #top #left #right #bottom{
+            visibility: hidden;
+        }
+
+        @media all and (max-width: 600px) {
+            body{
+                overflow-y: hidden;
+            }
+            #board {
+                margin: 5vh auto;
+                height: 92vh;
+                width: 90vw;
+                border-radius: 10%;
+                background-image: linear-gradient(to right,rgba(121,159,12,1),rgba(255,224,0,1));
+            }
+            #tetris {
+                margin: auto;
+                position: absolute;
+                top: 13.5vh;
+                left: 13%;
+                transform: scale(1,1);
+                border: 10px solid #419808;
+                box-shadow: 10px 10px 15px black;
+            }
+
+            #scoreBoard {
+                background-color: rgba(5, 67, 4 );
+                border-radius: 15%;
+                font-family: 'Shadows Into Light', cursive;
+                font-weight: 200;
+                color: rgba(22, 244, 19);
+                font-size: 36px;
+                padding: 0px 20px;
+                text-align: center;
+                display: inline-block;
+                position: absolute;
+                top: 0%;
+                right: 30%;
+            }
+            #score {
+                display: inline-block;
+                font-size: 40px;
+            }
+            .difficultyLevel {
+                font-size: 22.5px;
+                font-family: 'Piedra', cursive;
+                position: fixed;
+                color: red;
+                text-shadow: 5px 5px 2px black;
+                top: 6.3%;
+                right: 25%;
+            }
+            .btn1 {
+                top: 170%;
+                right: 0%;
+                visibility: hidden;
+            }
+            .btn2 {
+                top: 170%;
+                right: -80%;
+                visibility: hidden;
+            }
+            
+            .instructions {
+                position: fixed;
+                font-family: 'Shadows Into Light', cursive;
+                top: 38%;
+                right: 58%;
+                font-size: 14px;
+            }
+            .list{
+                visibility: hidden;
+            }
+            .title {
+                font-family: 'Press Start 2P', cursive;
+                margin: 80px 35px;
+                font-size: 50px;
+            }
+            #restartButton {
+                text-decoration: none;
+                font-family: 'Russo One', sans-serif;
+                font-size: 25px;
+                display: inline-block;
+                margin: 20px 50px 0;
+                padding: 7px 7px;
+                border-radius: 10px;
+                color: white;
+                background-color: black;
+                box-shadow: 2px 2px 10px white;
+            }
+            #game {
+                position: absolute;
+                visibility: hidden;
+                background-image: linear-gradient( 154.4deg, rgba(0,0,0,1) 30.5%, rgba(190,141,12,1) 130% );
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-attachment: fixed;
+                height: 100vh;
+                color: white;
+                height: 90vh;
+                width: 74vw;
+                z-index: 20;
+                top: 8%;
+                left: 13%;
+                border-radius: 8%;
+            }
+            #top{
+                visibility: visible;
+                display: inline-block;
+                padding: 10px;
+                text-decoration: none;
+                font-size: 27px;
+                color: white;
+                background-color: black;
+                border-radius: 20%;
+                position: absolute;
+                z-index: 10;
+                top: 80%;
+                right: 46%;
+            }
+            #right{
+                visibility: visible;
+                display: inline-block;
+                padding: 10px;
+                text-decoration: none;
+                font-size: 27px;
+                color: white;
+                background-color: black;
+                border-radius: 20%;
+                position: absolute;
+                z-index: 10;
+                top: 85%;
+                right: 34%;
+            }
+            #bottom{
+                visibility: visible;
+                display: inline-block;
+                padding: 10px;
+                text-decoration: none;
+                font-size: 27px;
+                color: white;
+                background-color: black;
+                border-radius: 20%;
+                position: absolute;
+                z-index: 10;
+                top: 90%;
+                right: 46%;
+            }
+            #left{
+                visibility: visible;
+                display: inline-block;
+                padding: 10px;
+                text-decoration: none;
+                font-size: 27px;
+                color: white;
+                background-color: black;
+                border-radius: 20%;
+                position: absolute;
+                z-index: 10;
+                top: 85%;
+                right: 58%;
+            }
+        }
+        
+    </style>
+    </head>
+    <body>
+        <div id="board">
+            <canvas id="tetris" width="240px" height="400px"></canvas>
+            <div id="scoreBoard">
+                Score:<div id="score">0</div>
+            </div>
+                <h1 class="difficultyLevel">DIFFICULTY : <span class="type">EASY</span></h1>
+                <div class="instructions">
+                    <ol class="list">
+                        <li>UP arrow key to rotate</li>
+                        <li>LEFT arrow key to move left</li>
+                        <li>RIGHT arrow key to move right</li>
+                        <li>DOWN arrow key to move down</li>
+                    </ol>
+                    <a href="../cover.html" class="btn btn1" >RESTART</a>
+                    <a href="../../index.html" class="btn btn2" >QUIT GAME!</a>
+                </div>
+            </div>    
+            <div>
+                <button onclick="p.rotate()" id="top">T</button>
+                <button onclick="p.moveRight()" id="right">R</button>
+                <button onclick="p.moveDown()" id="bottom">B</button>
+                <button onclick="p.moveLeft()" id="left">L</button>
+            </div>
+        </div>
+        <section id="game">
+            <h1 class="title">GAME<br>OVER</h1>
+            <a href="../cover.html" id="restartButton">PLAY AGAIN</a>
+            <a href="../../index.html" id="mainMenu">MAIN MENU</a>
+        </section>
+        
+        
+        <script src="tetris.js"></script>
+        <script src="script1.js"></script>
+        
+    </body>
+</html>

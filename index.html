@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Gaming site</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bangers&family=Piedra&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Pacifico&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width ,user-scalable=no, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        
+        <header>
+            <nav>
+                <div class="row clearfix">
+                    
+                        <img src="img/logo.png" class="logo">
+                        <p class="name">Dev's Gaming Website</p>
+                    
+                    <ul class="main-nav" id="check-class" >
+                        <li><a href="game1/cover.html">GAME 1</a></li>
+                        <li><a href="game2/cover2.html">GAME 2</a></li>
+                        <li><a href="game3/cover3.html">GAME 3</a></li>
+                        <li><a href="game4/index4_1.html">GAME 4</a></li>
+                    </ul>
+                    <a href="#" class="mobileIcon" onclick="slideShow()"><i class="fa fa-bars"></i></a>
+                </div>
+            </nav>
+            <div class="mainContentHeader">
+                <h1>WELCOME TO AMAZING <br><span class="colorChange">NEW EXPERIENCE </span><br>OF GAMING</h1>
+                <a href="game1/cover.html" class="btn btn-full">Random play</a>
+                <a href="game1/btn2.html" class="btn btn-nav">New Coming</a>
+            </div>
+            
+        </header>
+
+        <script type="text/javascript">
+
+            function slideShow(){
+                var x=document.getElementById("check-class");
+                if(x.style.display==="none"){
+                    x.style.display="block";
+                }else{
+                    x.style.display="none";
+                }
+            }
+
+        </script>
+
+
+    </body>
+</html>

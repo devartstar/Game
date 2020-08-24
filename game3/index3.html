@@ -1,0 +1,33 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>GAME3</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!--width="600" height="400"-->
+    <canvas id="pong" ></canvas>
+    <script>
+        window.onload=function(){
+            init();
+            indow.addEventListener('rsize',init,false);
+        }
+        function init(){
+            var cvs=document.getElementById('pong');
+            var ctx=cvs.getContext('2d');
+            var myWidth=window.innerWidth-10;
+            var myHeight=window.innerHeight-10;
+            ctx.canvas.width=myWidth;
+            ctx.canvas.height=myHeight;
+        }
+    </script>
+    <script src="script3.js"></script>
+</body>
+</html>
